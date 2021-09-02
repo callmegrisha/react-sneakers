@@ -65,6 +65,7 @@ a {
   --color-concrete: #f3f3f3;
   --color-silver: #bdbdbd;
   --color-silver-chalice: #9d9d9d;
+  --color-conifer: #9dd558;
 }
 
 // !Variables
@@ -177,5 +178,132 @@ header {
     padding: 13px;
     font-size: 14px;
     width: 200px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.drawer {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 420px;
+  background-color: var(--color-white);
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .items {
+    overflow: auto;
+  }
+}
+
+.cartItem {
+  padding: 20px;
+  border: 1px solid var(--color-concrete);
+  border-radius: 20px;
+  overflow: hidden;
+
+  .cartItemImg {
+    width: 70px;
+    height: 70px;
+    background-size: contain;
+    background-position: 0 -3px;
+    background-repeat: no-repeat;
+    margin: 20px;
+  }
+
+  span {
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+  }
+  b {
+    font-size: 14px;
+  }
+}
+
+.removeBtn {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.cartTotalBlock {
+  margin-top: auto;
+  ul {
+    padding: 0;
+    margin-bottom: 24px;
+    li {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 20px;
+
+      div {
+        flex: 1;
+        height: 1;
+        border-bottom: 1px dashed var(--color-silver-chalice);
+        position: relative;
+        top: -4px;
+        margin: 0 7px;
+      }
+    }
+  }
+
+  .greenButton {
+    position: relative;
+
+    &:hover {
+      img {
+        transform: translateX(5px);
+      }
+    }
+
+    img {
+      position: absolute;
+      right: 33px;
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+}
+
+.greenButton {
+  position: relative;
+  padding: 18px 33px;
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  background-color: var(--color-conifer);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-white);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(#9dd558, 5%);
+  }
+
+  &:active {
+    background-color: darken(#9dd558, 10%);
   }
 }
