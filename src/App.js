@@ -76,10 +76,19 @@ function App() {
         </ul>
       </header>
       <div className="content p-45">
-        <h1 className="mb-40">Все кроссовки</h1>
+        <div className="d-flex align-center justify-between mb-40">
+          <h1>Все кроссовки</h1>
+          <div className="search-block d-flex">
+            <img src="/img/search.svg" alt="Search" />
+            <input type="search" placeholder="Поиск..." />
+          </div>
+        </div>
 
         <div className="d-flex flex-wrap align-center">
           <article className="card">
+            <div className="favorite">
+              <img src="/img/heart-unliked.svg" alt="Unlicked" />
+            </div>
             <img
               width={133}
               height={112}
