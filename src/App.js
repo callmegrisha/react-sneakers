@@ -142,7 +142,7 @@ function App() {
           opened={cartOpened}
         />
         <Header onClickCart={() => setCartOpened(true)} />
-        <Route path="" exact>
+        <Route path={process.env.PUBLIC_URL + '/'} exact>
           <Home
             items={items}
             cartItems={cartItems}
@@ -154,10 +154,10 @@ function App() {
             isLoading={isLoading}
           />
         </Route>
-        <Route path="favorites" exact>
+        <Route path={process.env.PUBLIC_URL + '/favorites'} exact>
           <Favorites onAddToFavorite={onAddToFavorite} />
         </Route>
-        <Route path="orders" exact>
+        <Route path={process.env.PUBLIC_URL + '/orders'} exact>
           <Orders />
         </Route>
       </div>
